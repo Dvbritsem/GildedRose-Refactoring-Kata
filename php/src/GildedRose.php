@@ -28,7 +28,7 @@ final class GildedRose
     private function getUpdater(Item $item): ItemUpdater
     {
         foreach ($this->updaters as $key => $updater) {
-            if (str_contains($item->name, $key)) return $updater;
+            if (str_contains(strtolower($item->name), strtolower($key))) return $updater;
         }
 
         return $this->updaters['Simple Item'];
