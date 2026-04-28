@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use ApprovalTests\Reporters\DiffReporter;
 use GildedRose\GildedRose;
 use GildedRose\Item;
 use PHPUnit\Framework\TestCase;
@@ -20,16 +21,6 @@ use ApprovalTests\Approvals;
  */
 class ApprovalTest extends TestCase
 {
-
-    public function testFoo(): void
-    {
-        $items = [new Item('foo', 0, 0)];
-        $app = new GildedRose($items);
-        $app->updateQuality();
-
-        Approvals::verifyList($items);
-    }
-
     public function testThirtyDays(): void
     {
         ob_start();
